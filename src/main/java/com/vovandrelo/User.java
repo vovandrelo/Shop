@@ -1,27 +1,19 @@
 package com.vovandrelo;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class User {
-	private static final Logger LOGGER = LoggerFactory.getLogger(User.class);
+	@Getter
 	private final String login;
-	private String pass;
+	@Getter
 	private final Basket basket = new Basket();
+	private String pass;
 
 	public User(String login, String pass) {
-		LOGGER.info("Create user");
+		log.info("Create user");
 		this.login = login;
 		this.pass = pass;
-	}
-
-	public String getLogin() {
-		LOGGER.info("Get user login");
-		return login;
-	}
-
-	public Basket getBasket() {
-		LOGGER.info("Get user pass");
-		return basket;
 	}
 }
